@@ -1,0 +1,12 @@
+{
+  "name": "netgri-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node --check script.js && node --check navbar.js && node --check whatsapp.js && node --check works-space.js && node --check privacy-controls.js && node --check site-features.js && node --check intro-boot.js && node --check intro.js && node --check intro-crowd.js && node --test scripts/*.test.mjs",
+    "preview": "node scripts/preview.mjs"
+  }
+}

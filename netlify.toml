@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# CSP, caching and preview indexing headers are generated in dist/_headers.
+# Netlify serves 404.html with HTTP 404; this is not an SPA.

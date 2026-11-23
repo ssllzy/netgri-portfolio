@@ -1,0 +1,19 @@
+.word-loader { display: inline-block; color: var(--accent); white-space: nowrap; }
+.word-loader-stack { display: inline-grid; vertical-align: bottom; }
+.word-loader-row { grid-area: 1 / 1; text-align: left; white-space: pre; }
+.word-loader-char {
+  display: inline-block;
+  opacity: 0;
+  animation: word-loader-reveal var(--word-cycle, 12s) cubic-bezier(.22,.61,.36,1) infinite;
+}
+.word-loader.paused .word-loader-char { animation-play-state: paused; }
+@keyframes word-loader-reveal {
+  0% { opacity: 0; filter: blur(10px); transform: translateY(.15em); }
+  6%, 17% { opacity: 1; filter: blur(0); transform: translateY(0); }
+  21%, 100% { opacity: 0; filter: blur(8px); transform: translateY(-.1em); }
+}
+@media (max-width: 760px) { .word-loader-row { text-align: center; } }
+@media (prefers-reduced-motion: reduce) {
+  .word-loader-row:not(:first-child) { display: none; }
+  .word-loader-char { animation: none; opacity: 1; filter: none; transform: none; }
+}

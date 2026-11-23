@@ -1,0 +1,32 @@
+.site-intro { display: none; }
+html.intro-pending { overflow: hidden; }
+.intro-pending .site-intro {
+  display: block; position: fixed; inset: 0; z-index: 200; overflow: hidden;
+  isolation: isolate; background: #000; color: #161716;
+}
+.intro-pending .brand-art img, .intro-pending .word-loader-char { animation-play-state: paused; }
+.intro-header { position: absolute; z-index: 5; inset: max(24px, env(safe-area-inset-top)) 32px auto; display: flex; justify-content: space-between; align-items: center; }
+.intro-mark { font-size: 12px; letter-spacing: .18em; }
+.intro-skip { min-width: 44px; min-height: 44px; border: 0; padding: 10px; background: none; color: inherit; font-size: 14px; }
+.intro-skip:focus-visible { outline-color: currentColor; }
+.intro-crowd-scene { position: absolute; inset: 0; background: #f7f7f2; }
+.intro-crowd { position: absolute; inset: 0; width: 100%; height: 100%; }
+.intro-copy { position: absolute; z-index: 2; left: 24px; right: 24px; margin: 0; text-align: center; font: 500 clamp(36px, 6.8vw, 100px)/1.12 Manrope, Arial, sans-serif; letter-spacing: -.055em; }
+.intro-copy > span { display: inline-block; }
+.intro-first { top: 27%; }
+.intro-first > span { opacity: 0; }
+.intro-stack-scene { position: absolute; inset: 0; color: var(--paper); opacity: 0; }
+.intro-stack { position: absolute; inset: 0; }
+.intro-card { position: absolute; left: 50%; top: 43%; width: clamp(135px, 19vw, 250px); aspect-ratio: 1.35; margin: 0; opacity: 0; will-change: transform, opacity; }
+.intro-card img { width: 100%; height: 100%; object-fit: cover; border-radius: 5px; box-shadow: 0 12px 50px #0008; }
+.intro-second { top: 70%; }
+.intro-second > span { opacity: 0; }
+.site-intro.is-dark { color: var(--paper); }
+@media (max-width: 600px) {
+  .intro-header { left: 20px; right: 20px; }
+  .intro-first { top: 28%; }
+  .intro-copy { left: 20px; right: 20px; font-size: clamp(36px, 9.8vw, 56px); }
+  .intro-card { top: 44%; width: 46vw; }
+  .intro-second { top: 68%; }
+}
+@media (prefers-reduced-motion: reduce) { .intro-pending .site-intro { display: none; } }

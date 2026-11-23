@@ -1,0 +1,73 @@
+html { scroll-padding-top: 92px; }
+.nav-roll-link { display: inline-flex; align-items: center; min-width: 44px; min-height: 44px; padding-block: 6px; }
+.nav .mark, .nav .availability { min-height: 44px; align-items: center; }
+.nav .availability { display: inline-flex; }
+.nav-space { height: 88px; }
+.nav > .scroll-brand { display: none; }
+.scroll-nav {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 68px;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  pointer-events: none;
+}
+.nav-glass {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, #050707b3, #05070780);
+  -webkit-backdrop-filter: blur(20px) saturate(115%);
+  backdrop-filter: blur(20px) saturate(115%);
+  border-bottom: 1px solid #ffffff16;
+  clip-path: var(--glass-shape);
+  opacity: var(--glass-opacity, 0);
+}
+.nav-roots {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  color: #f0f1e9;
+  opacity: var(--root-opacity, 0);
+  stroke-dasharray: 100;
+  stroke-dashoffset: var(--root-offset, 100);
+  pointer-events: none;
+}
+.scroll-nav .scroll-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 56px;
+  color: var(--paper);
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  line-height: 1;
+  opacity: var(--brand-opacity, 0);
+  clip-path: inset(0 var(--brand-clip, 50%));
+  pointer-events: auto;
+}
+.scroll-brand img {
+  width: 42px;
+  height: 48px;
+  object-fit: contain;
+  filter: invert(1);
+  mix-blend-mode: screen;
+}
+.scroll-brand:hover { color: #fff; }
+.scroll-nav[inert] .scroll-brand { pointer-events: none; }
+@media (max-width: 760px) {
+  .nav-space, .nav { height: 132px; }
+  .nav nav { gap: 12px; justify-content: space-between; }
+  .nav nav a, .nav .mark { font-size: 14px; }
+  .nav .availability { font-size: 12px; }
+  .scroll-nav { height: 64px; }
+  .scroll-nav .scroll-brand { font-size: 21px; gap: 12px; }
+  .scroll-brand img { width: 36px; height: 42px; }
+}
+
